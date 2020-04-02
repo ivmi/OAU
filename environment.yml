@@ -5,3 +5,6 @@ dependencies:
   - numpy
   - matplotlib
   - scipy
+  - slycot
+  - control
+  
