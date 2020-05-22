@@ -25,6 +25,13 @@ def suma(signs):
 
     return (None, out, [])
 
+def saturate(u_min, u_max):
+    def out(t, x, u):
+        u0 = u(0)
+        return u_min if u0 < u_min else u_max if u0 > u_max else u0
+
+    return (None, out, [])
+
 def gain(K=1.0):
     def out(t, x, u):
         return K*u(0)
@@ -38,6 +45,20 @@ def step(y0, y1, t_step):
             return y0
         else:
             return y1
+
+    return (None, out, [])
+
+def stairs(v_t, v_y):
+    def out(t, x, u):
+        i = next(x for x, val in enumerate(v_t) if val > t) 
+        return v_y[i-1] # TODO: check limit values
+        
+    return (None, out, [])
+
+
+def sine(A, w, fi):
+    def out(t, x, u):
+        return A*math.sin(w*t+fi)
 
     return (None, out, [])
 
