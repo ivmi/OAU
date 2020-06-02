@@ -8,3 +8,5 @@ dependencies:
   - slycot
   - control
   - ipympl
+  - voila
+  
