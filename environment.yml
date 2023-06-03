@@ -3,10 +3,10 @@ channels:
   - conda-forge
 dependencies:
   - numpy
-  - matplotlib
-  - scipy
-  - slycot
-  - control
-  - ipympl
-  - voila
+  - matplotlib=3.5.2
+  - scipy=1.7.3
+  - slycot=0.4.0.0
+  - control=0.9.1
+  - ipympl=0.9.1
+  - voila=0.3.5
   
